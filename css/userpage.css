@@ -1,0 +1,42 @@
+*{
+    background-color: wheat;
+    background-position: center;
+    background-size: cover;
+    position: auto;
+    
+}
+.span{
+    color: red;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+a{
+    text-decoration: none;
+    color: palevioletred;
+    font-size: 28px;
+}
+nav li{
+    display: inline-block;
+    margin-right: 70px;
+    margin-bottom: 90px;
+}
+nav li a{
+    text-decoration: none;
+    font-size: 20px;
+    color: blue;
+    font-family: sans-serif;
+}
+nav li{
+    display: inline-block;
+    list-style: none;
+}
+nav a:hover{
+    color: crimson;
+    background-color: white;
+}
+.img{
+    image-resolution: auto;
+}

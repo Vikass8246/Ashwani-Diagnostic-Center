@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scal=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/registration.css">
+    <title>Sign in And Sign Up</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="signin-signup">
+        <form action="" class="sign-in-form">
+          <h2 class="title">Sign in</h2>
+          
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username">
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password">
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        </div>
+          <input type="submit" class="btn" value="Login">
+          <p class="social-text">Or Sign in with social platform</p>
+          <div class="social-media">
+            <a href="" class="social-icon">
+              <i class="fab fa-facebook"></i>
+            </a><a href="" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a><a href="" class="social-icon">
+              <i class="fab fa-google"></i>
+            </a><a href="" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a>
+          </p>
+        </form>
+
+        <form action="" class="sign-up-form">
+          <h2 class="title">Sign up</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Full Name">
+          </div>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username">
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="text" placeholder="Email">
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password">
+          </div>
+          <input type="submit" class="btn" value="Sign Up">
+          <p class="social-text">Or Sign in with social platform</p>
+          <div class="social-media">
+            <a href="" class="social-icon">
+              <i class="fab fa-facebook"></i>
+            </a><a href="" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a><a href="" class="social-icon">
+              <i class="fab fa-google"></i>
+            </a><a href="" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a>
+        
+        </form>
+
+
+      </div>
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Member of Us?</h3>
+            <p>Ashwani Diagnostic Center.</p>
+            <button class="btn" id="sign-in-btn">Sign in</button>
+          </div>
+          <img src="img/signin.jpg" alt="" class="image">
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>New to Us?</h3>
+            <p>Ashwani Diagnostic Center.</p>
+            <button class="btn" id="sign-up-btn">Sign Up</button>
+          </div>
+          <img src="img/signup.jpg" alt="" class="image">
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!--Script-->
+    <script src="js/registration.js"></script>
+    <script>
+      function validateForm() {
+          var password = document.getElementById("password").value;
+          var confirmPassword = document.getElementById("confirmPassword").value;
+          var email = document.querySelector('.sign-up-form input[type="email"]').value;
+
+          // Password validation
+          if (password.length < 8 || password.length > 16) {
+              alert("Password must be between 8 and 16 characters");
+              return false;
+          }
+
+          // Password and Confirm Password match
+          if (password !== confirmPassword) {
+              alert("Passwords do not match");
+              return false;
+          }
+
+          // Email validation
+          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!email.match(emailRegex)) {
+              alert("Enter a valid email address");
+              return false;
+          }
+
+          // Additional password strength validation can be added here
+
+          return true;
+      }
+  </script>
+  </body>
+</html>
+

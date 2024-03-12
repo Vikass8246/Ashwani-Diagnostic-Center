@@ -1,0 +1,57 @@
+<?php
+                        if (isset($_POST['submit'])) {
+
+                            if (isset($_POST['department']) && !empty($_POST['doctors']) && !empty($_POST['date']) && !empty($_POST['time']) && !empty($_POST['name']) && !empty($_POST['phone']) && !empty($_POST['message'])) {
+                                $statement = $DB->prepare('INSERT INTO appoinments (doctor,department,app_date,app_time,patient_name,phone,msg) VALUES (:doctor,:department,:app_date,:app_time,:patient_name,:phone,:msg)');
+
+
+
+                                $is_done = $statement->execute([
+                                    'doctor' => $_POST['doctors'],
+                                    'department' => $_POST['department'],
+                                    'app_date' => $_POST['date'],
+                                    'app_time' => $_POST['time'],
+                                    'patient_name' => $_POST['name'],
+                                    'phone' => $_POST['phone'],
+                                    'msg' => $_POST['message'],
+                                ]);
+
+                                if ($is_done) {
+                                    echo "<p class='success'>Your appointment has been taken!</p>";
+                                    header("Refresh:1;url= success.php");
+                                }
+                            } else {
+                                echo "<p class='error'>Fill out the all form data!</p>";
+                            }
+                        }
+                        ?>
+
+
+
+
+
+previous login
+
+
+
+$query="INSERT INTO `booking_appoinment`(`fullname`, `email`, `mobile`, `date`, `test`, `descript`) VALUES ('$_POST[fullname]','$_POST[email]','$_POST[mobile]','$_POST[date]','$_POST[test]','$_POST[descript]')";
+    if(mysqli_query($con,$query))
+    {
+        #if data can be inserted successfully
+        echo"
+        <script>
+            alert('Appoinment Successfull');
+            window.location.href='appoinment1.php';
+        </script>
+        ";
+    }
+    else
+            {
+                #if data cannot be inserted
+                echo"
+                <script>
+                    alert('Cannot Run Query');
+                    window.location.href='appoinment1.php';
+                </script>
+                ";
+            }
